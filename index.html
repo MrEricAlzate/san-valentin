@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi San Valentín?</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            padding: 50px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            display: inline-block;
+        }
+        .btn {
+            background: #ff4d6d;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background: #e63950;
+        }
+        .no-btn {
+            background: #bbb;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            position: absolute;
+        }
+        #mensajeFinal {
+            font-size: 20px;
+            color: #ff4d6d;
+            font-weight: bold;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="nameInputContainer" class="card">
+        <h2>Ingresa tu nombre</h2>
+        <input type="text" id="nameInput" placeholder="Tu nombre">
+        <button class="btn" onclick="verificarNombre()">Continuar</button>
+    </div>
+    
+    <div id="valentinCard" class="card" style="display: none;">
+        <h1 id="mensaje">💖 ¿Quieres ser mi San Valentín? 💖</h1>
+        <button class="btn" onclick="mostrarMensaje()">Sí 💕</button>
+        <button class="no-btn" id="noBtn" onmouseover="moverBoton()">No 💔</button>
+        <p id="mensajeFinal"> Te amo preciosa, gracias ❤️</p>
+    </div>
+    
+    <script>
+        function verificarNombre() {
+            const nombre = document.getElementById("nameInput").value;
+            if (nombre.toLowerCase() === "celeste") {
+                document.getElementById("nameInputContainer").style.display = "none";
+                document.getElementById("valentinCard").style.display = "inline-block";
+            } else {
+                alert("Lo siento, esta invitación es solo para Celeste 💖");
+            }
+        }
+
+        function mostrarMensaje() {
+            document.getElementById("mensajeFinal").style.display = "block";
+        }
+
+        function moverBoton() {
+            const botonNo = document.getElementById("noBtn");
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+            botonNo.style.left = `${x}px`;
+            botonNo.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
