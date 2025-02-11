@@ -49,6 +49,10 @@
             margin-top: 20px;
             display: none;
         }
+        #gifContainer {
+            margin-top: 20px;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -62,7 +66,10 @@
         <h1 id="mensaje">💖 ¿Quieres ser mi San Valentín? 💖</h1>
         <button class="btn" onclick="mostrarMensaje()">Sí 💕</button>
         <button class="no-btn" id="noBtn" onmouseover="moverBoton()">No 💔</button>
-        <p id="mensajeFinal"> Te amo preciosa, gracias ❤️</p>
+        <p id="mensajeFinal">Te amo preciosa, gracias ❤️</p>
+        <div id="gifContainer">
+            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTE0bGZ4dXB1ZXkxY2hzOXRqc2ZtY3BueWFkNDR1ZDh3bnoyYnIxNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tpVKvAabWt3G5csMkT/giphy.gif" alt="Celebración" width="300">
+        </div>
     </div>
     
     <script>
@@ -78,6 +85,7 @@
 
         function mostrarMensaje() {
             document.getElementById("mensajeFinal").style.display = "block";
+            document.getElementById("gifContainer").style.display = "block";
         }
 
         function moverBoton() {
